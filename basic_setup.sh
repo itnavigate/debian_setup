@@ -26,6 +26,7 @@ sudo apt install -y git wget curl gpg
 
 git config --global init.defaultBranch main
 git config --global core.editor "vim"
+git config --global credential.helper 'cache --timeout=3600' # 1 hour
 
 read -t 5 -p "About to reboot. Press CTRL-C to stop, or ENTER to continue immediately." reply 
 reply=${reply:-Y}
