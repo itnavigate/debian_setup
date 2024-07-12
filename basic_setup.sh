@@ -23,6 +23,10 @@ set-option -g history-limit 10000
 EOF
 
 sudo apt install -y git wget curl gpg 
+
+git config --global init.defaultBranch main
+git config --global core.editor "vim"
+
 read -t 5 -p "About to reboot. Press CTRL-C to stop, or ENTER to continue immediately." reply 
 reply=${reply:-Y}
 if [[ ${reply^} = Y ]]; then
