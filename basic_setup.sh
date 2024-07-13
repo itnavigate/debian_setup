@@ -8,7 +8,7 @@ sudo apt install -y tmux
 echo ":colorscheme desert" | sudo tee -a /etc/vim/vimrc.local
 cat <<EOF>> ~/.bashrc
 # Immediatly save bash history
-export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+export PROMPT_COMMAND="history -a; history -c; history -r; \$PROMPT_COMMAND"
 
 # Start tmux and append session if exists
 if command -v tmux &> /dev/null && [ -n "\$PS1" ] && [[ ! "\$TERM" =~ screen ]] && [[ ! "\$TERM" =~ tmux ]] && [ -z "\$TMUX" ] && [ ! -f ~/.no_tmux ]; then
