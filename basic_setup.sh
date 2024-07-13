@@ -7,8 +7,13 @@ sudo apt-get upgrade --with-new-pkgs -y
 sudo apt install -y tmux
 echo ":colorscheme desert" | sudo tee -a /etc/vim/vimrc.local
 cat <<EOF>> ~/.bashrc
+
 # Immediatly save bash history
-export PROMPT_COMMAND="history -a; history -c; history -r; \$PROMPT_COMMAND"
+
+if [ -z "\${PROMPT_COMMAND_SAVE+x}" ]; then
+  export PROMPT_COMMAND_SAVE="history -a; history -c; history -r"
+  export PROMPT_COMMAND="\$PROMPT_COMMAND_SAVE; \$PROMPT_COMMAND"
+fi
 
 # Start tmux and append session if exists
 if command -v tmux &> /dev/null && [ -n "\$PS1" ] && [[ ! "\$TERM" =~ screen ]] && [[ ! "\$TERM" =~ tmux ]] && [ -z "\$TMUX" ] && [ ! -f ~/.no_tmux ]; then
