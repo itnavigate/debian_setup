@@ -20,7 +20,7 @@ sudo usermod -aG docker ${USER}
 
 mkdir -p ~/.docker/cli-plugins/
 
-curl -SL https://github.com/docker/compose/releases/download/${COMPOSE_VERSION}/docker-compose-linux-x86_64 -o ~/.docker/cli-plugins/docker-compose
+curl -SL https://github.com/docker/compose/releases/download/v${COMPOSE_VERSION}/docker-compose-linux-x86_64 -o ~/.docker/cli-plugins/docker-compose
 
 chmod +x ~/.docker/cli-plugins/docker-compose
 
