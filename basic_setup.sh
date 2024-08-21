@@ -4,7 +4,7 @@
 sudo apt-get update 
 sudo apt-get autoremove -y
 sudo apt-get upgrade --with-new-pkgs -y
-sudo apt install -y tmux sudo
+sudo apt install -y tmux sudo bc
 echo ":colorscheme desert" | sudo tee -a /etc/vim/vimrc.local
 cat <<EOF>> ~/.bashrc
 
